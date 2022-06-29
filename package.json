@@ -1,5 +1,5 @@
 {
-  "name": "ts-eslint-plugin-demo",
+  "name": "eslint-plugin-test",
   "version": "0.0.1",
   "description": "ts eslint plugin template",
   "main": "lib/",
@@ -12,6 +12,9 @@
     "test": "jest",
     "typecheck": "tsc -p .",
     "postinstall": "husky install"
+  },
+  "repository": {
+    "url": "https://github.com/jy0529/ts-eslint--plugin-template"
   },
   "keywords": [
     "typescript",
@@ -27,6 +30,26 @@
       "@commitlint/config-conventional"
     ]
   },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "projects": [
+      {
+        "displayName": "test",
+        "testPathIgnorePatterns": [
+          "<rootDir>/lib/.*",
+          "<rootDir>/src/rules/__tests__/fixtures/*",
+          "<rootDir>/src/rules/__tests__/test-utils.ts"
+        ]
+      }
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.18.6",
     "@babel/core": "^7.18.6",
@@ -39,7 +62,9 @@
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
     "babel-jest": "^28.1.1",
+    "eslint": "^8.18.0",
     "husky": "^8.0.1",
+    "jest": "^28.1.1",
     "rimraf": "^3.0.2",
     "semver": "^7.3.7",
     "ts-node": "^10.8.1",
