@@ -13,8 +13,9 @@
     "typecheck": "tsc -p .",
     "postinstall": "husky install"
   },
+  "repo":"https://github.com/jy0529/ts-eslint--plugin-template.git" ,
   "repository": {
-    "url": "https://github.com/jy0529/ts-eslint--plugin-template"
+    "url": "git@github.com:jy0529/ts-eslint--plugin-template.git"
   },
   "keywords": [
     "typescript",
