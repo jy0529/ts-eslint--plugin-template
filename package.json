@@ -31,6 +31,10 @@
       "@commitlint/config-conventional"
     ]
   },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix",
+    "*.{md,json,yml}": "prettier --write"
+  },
   "jest": {
     "coverageThreshold": {
       "global": {
@@ -69,6 +73,7 @@
     "eslint-plugin-node": "^11.1.0",
     "husky": "^8.0.1",
     "jest": "^28.1.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "semver": "^7.3.7",
