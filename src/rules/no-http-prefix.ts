@@ -51,13 +51,13 @@ export default createRule({
                 }
             },
             TemplateLiteral: (node) => {
-                let firstTemplateElement = node.quasis[0];
+                const firstTemplateElement = node.quasis[0];
                 if (check(firstTemplateElement?.value?.raw)) {
                     context.report({
                         node,
                         messageId: 'noHttpPrefix',
                         fix: function (fixer) {
-                            let text = firstTemplateElement?.value?.raw;
+                            const text = firstTemplateElement?.value?.raw;
                             return fixer.replaceText(node.quasis[0], text.replace(HTTP_START_REGEX, (_matcher, $1) => '`' + '//' + $1 + '${'));
                         }
                     });
