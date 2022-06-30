@@ -11,7 +11,10 @@
     "build": "babel --extensions .js,.ts src --out-dir lib --copy-files && rimraf lib/__tests__ 'lib/**/__tests__'",
     "test": "jest",
     "typecheck": "tsc -p .",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "prepack": "rimraf lib && yarn build",
+    "prepublishOnly": "pinst --disable",
+    "postpublish": "pinst --enable"
   },
   "repo": "https://github.com/jy0529/ts-eslint--plugin-template.git",
   "repository": {
@@ -74,6 +77,7 @@
     "husky": "^8.0.1",
     "jest": "^28.1.1",
     "lint-staged": "^13.0.3",
+    "pinst": "^3.0.0",
     "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "semver": "^7.3.7",
