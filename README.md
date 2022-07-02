@@ -1,3 +1,3 @@
-# ts-eslint--plugin-template
+# ts-eslint-plugin-template
 
 A typescript eslint plugin template.
